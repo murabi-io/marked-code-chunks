@@ -14,7 +14,7 @@
       "prerelease": true
     }
   ],
-  "repositoryUrl": "https://github.com/htimur/marked-code-chunks.git",
+  "repositoryUrl": "https://github.com/murabi-io/marked-code-chunks.git",
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",

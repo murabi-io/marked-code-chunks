@@ -2,9 +2,9 @@
   "include": ["./src/**/*.ts"],
   "exclude": ["./src/**/__tests__"],
   "compilerOptions": {
-    "lib": ["es2020"],
+    "lib": ["esnext"],
     "module": "commonjs",
-    "target": "es2020",
+    "target": "esnext",
 
     "rootDir": "./src",
     "outDir": "build",

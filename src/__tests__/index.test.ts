@@ -1,28 +1,19 @@
-import { describe, expect, it } from "vitest";
-import { foo, bar } from "../index";
+import { marked } from "marked";
 
-describe("foo()", () => {
-  describe("given two positive integers", () => {
-    const first = 1;
-    const second = 2;
+import extension from "../index";
+import { trimLines } from "./helpers";
 
-    describe("when called", () => {
-      it("returns the sum of them", () => {
-        expect(foo(first, second)).toEqual(3);
-      });
-    });
-  });
-});
+marked.use(extension());
 
-describe("bar()", () => {
-  describe("given two positive integers", () => {
-    const first = 2;
-    const second = 1;
-
-    describe("when called", () => {
-      it("returns the subtraction of them", () => {
-        expect(bar(first, second)).toEqual(1);
-      });
+describe("marked-code-chunks", () => {
+  describe("given a code chunk", () => {
+    it("should render chunks correctly with ~~~ fences", () => {
+      const md = trimLines(`
+      ~~~bash {osx, cmd="/bin/bash"}
+            ls .
+      ~~~
+    `);
+      expect(marked(md)).toMatchSnapshot();
     });
   });
 });

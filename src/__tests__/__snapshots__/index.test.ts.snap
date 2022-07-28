@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`marked-code-chunks given a code chunk should render chunks correctly with ~~~ fences 1`] = `
+"<pre><code data-osx=\\"true\\" data-cmd=\\"/bin/bash\\" class=\\"language-bash\\">ls .
+</code></pre>
+"
+`;

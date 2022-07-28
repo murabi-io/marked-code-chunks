@@ -1,10 +1,12 @@
-# Typescript Library Starter
-
-![NPM](https://img.shields.io/npm/l/@gjuchault/typescript-library-starter)
-![NPM](https://img.shields.io/npm/v/@gjuchault/typescript-library-starter)
-![GitHub Workflow Status](https://github.com/gjuchault/typescript-library-starter/actions/workflows/typescript-library-starter.yml/badge.svg?branch=main)
-
-Yet another (opinionated) typescript library starter template.
+# marked-code-chunks
+Marked extension to add code chunk metadata to the markdown fenced code blocks. e.g.
+```
+~~~bash {osx bin=/bin/bash}
+ls -l ./
+~~~
+```
+- tokenizer will extract attributes `osx=true` and `bin="/bin/bash""`
+- renderer will render the code block with attributes: `data-osx="true"` and `data-bin="/bin/bash"`
 
 ## Opinions and limitations
 
@@ -14,7 +16,7 @@ Yet another (opinionated) typescript library starter template.
 
 ## Getting started
 
-1. `git clone git@github.com:gjuchault/typescript-library-starter.git my-project`
+1. `git clone git@github.com:murabi-io/marked-code-chunks.git`
 2. `cd my-project`
 3. `npm install`
 4. `npm run setup`
@@ -47,13 +49,13 @@ Commands:
 
 ### Tests
 
-typescript-library-starter uses [vitest](https://vitest.dev/). The coverage is done through vitest, using [c8](https://github.com/bcoe/c8).
+typescript-library-starter uses [jest](https://jestjs.io/).
 
 Commands:
 
-- `test`: runs vitest test runner
-- `test:watch`: runs vitest test runner in watch mode
-- `test:coverage`: runs vitest test runner and generates coverage reports
+- `test`: runs jest test runner
+- `test:watch`: runs jest test runner in watch mode
+- `test:coverage`: runs jest test runner and generates coverage reports
 
 ### Format & lint
 

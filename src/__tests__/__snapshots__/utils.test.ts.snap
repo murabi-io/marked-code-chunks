@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`utils escape function given a code should escape the code, with encoding 1`] = `
+"
+        const { build } = require(&#39;esbuild&#39;)
+  
+        build({
+          entryPoints: [&#39;src/index.ts&#39;],
+          outdir: &#39;dist&#39;,
+          bundle: true,
+        })
+      "
+`;
+
+exports[`utils escape function given a code should escape the code, without encoding 1`] = `
+"
+        &lt;div class=&quot;token-line css-k008qs&quot; style=&quot;color:rgb(214, 222, 235)&quot;&gt;
+          &lt;span class=&quot;css-15avlhb&quot;&gt;1&lt;/span&gt;
+          &lt;span class=&quot;token function&quot; style=&quot;color:rgb(130, 170, 255)&quot;&gt;npm&lt;/span&gt;
+          &lt;span class=&quot;token plain&quot;&gt; &lt;/span&gt;
+          &lt;span class=&quot;token function&quot; style=&quot;color:rgb(130, 170, 255)&quot;&gt;install&lt;/span&gt;
+          &lt;span class=&quot;token plain&quot;&gt; npm-dts --save-dev&lt;/span&gt;
+         &lt;/div&gt;
+      "
+`;
+
+exports[`utils indentCodeCompensation function given a code should properly indent the given code 1`] = `
+"
+        const { build } = require('esbuild')
+        build({
+ entryPoints: ['src/index.ts'],
+ outdir: 'dist',
+ bundle: true,
+        })"
+`;

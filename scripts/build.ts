@@ -1,5 +1,7 @@
-import path from "path";
+import * as path from "path";
 import { build as esbuild } from "esbuild";
+
+const { dependencies, peerDependencies } = require('../package.json')
 
 const baseConfig = {
   platform: "node" as const,
@@ -7,7 +9,8 @@ const baseConfig = {
   format: "cjs" as const,
   nodePaths: [path.join(__dirname, "../src")],
   sourcemap: true,
-  external: [],
+  bundle: true,
+  external: Object.keys(dependencies).concat(Object.keys(peerDependencies)),
 };
 
 async function main() {

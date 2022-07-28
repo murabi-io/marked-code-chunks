@@ -1,7 +1,20 @@
-export function foo(a: number, b: number): number {
-  return a + b;
-}
+export * from "./block-attributes/types";
+export * from "./block-info/types";
+export * from "./rules";
+export * from "./tokenizer";
 
-export function bar(a: number, b: number): number {
-  return a - b;
+import { marked } from "marked";
+
+import renderer from "./renderer";
+import tokenizer from "./tokenizer";
+
+import MarkedExtension = marked.MarkedExtension;
+
+export const ren = renderer;
+export const token = tokenizer;
+
+export default function (): MarkedExtension {
+  return {
+    extensions: [renderer, tokenizer],
+  };
 }

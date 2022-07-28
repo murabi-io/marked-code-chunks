@@ -1,5 +1,5 @@
-import fs from "fs/promises";
-import path from "path";
+import * as fs from "fs/promises";
+import * as path from "path";
 
 async function main() {
   await Promise.all([rmrf("build"), rmrf("coverage"), rmrf(".nyc_output")]);
