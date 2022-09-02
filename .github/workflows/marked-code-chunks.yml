@@ -34,7 +34,12 @@ jobs:
         run: npm run spell:check
 
       - name: Test
-        run: npm run test
+        run: npm run test:coverage
+
+      - name: Upload coverage to Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Release
         env:
