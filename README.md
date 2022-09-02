@@ -1,4 +1,9 @@
 # marked-code-chunks
+> Make your Markdown code blocks executable 
+
+[![marked-code-chunks](https://github.com/murabi-io/marked-code-chunks/actions/workflows/marked-code-chunks.yml/badge.svg)](https://github.com/murabi-io/marked-code-chunks/actions/workflows/marked-code-chunks.yml)
+[![Coverage Status](https://coveralls.io/repos/github/murabi-io/marked-code-chunks/badge.svg?branch=main)](https://coveralls.io/github/murabi-io/marked-code-chunks?branch=main)
+
 Marked extension to add code chunk metadata to the markdown fenced code blocks. e.g.
 ```
 ~~~bash {osx bin=/bin/bash}
@@ -8,33 +13,24 @@ ls -l ./
 - tokenizer will extract attributes `osx=true` and `bin="/bin/bash""`
 - renderer will render the code block with attributes: `data-osx="true"` and `data-bin="/bin/bash"`
 
-## Opinions and limitations
 
-1. Relies as much as possible on each included library's defaults
-2. Only rely on GitHub Actions
-3. Do not include documentation generation
+## Development & Contribution
+Check out our [Contributing Guidelines](./CONTRIBUTING.md) and [Code of Conduct](./CODE_OF_CONDUCT.md).
 
-## Getting started
+### Getting started
 
 1. `git clone git@github.com:murabi-io/marked-code-chunks.git`
 2. `cd my-project`
 3. `npm install`
 4. `npm run setup`
 
-Or click on `Use this template` button on GitHub!
+### Features
 
-To enable deployment, you will need to:
+#### Node.js, npm version
 
-1. Setup `NPM_TOKEN` secret in GitHub actions ([Settings > Secrets > Actions](https://github.com/gjuchault/typescript-service-starter/settings/secrets/actions))
-2. Give `GITHUB_TOKEN` write permissions for GitHub releases ([Settings > Actions > General](https://github.com/gjuchault/typescript-service-starter/settings/actions) > Workflow permissions)
+Repository relies on [volta](https://volta.sh/) to ensure node version to be consistent across developers. It's also used in the GitHub workflow file.
 
-## Features
-
-### Node.js, npm version
-
-Typescript Library Starter relies on [volta](https://volta.sh/) to ensure node version to be consistent across developers. It's also used in the GitHub workflow file.
-
-### Typescript
+#### Typescript
 
 Leverages [esbuild](https://github.com/evanw/esbuild) for blazing fast builds, but keeps `tsc` to generate `.d.ts` files.
 Generates two builds to support both ESM and CJS.
@@ -47,9 +43,9 @@ Commands:
 - `type:check`: only run typechecking
 - `type:build`: only generates CJS and ESM
 
-### Tests
+#### Tests
 
-typescript-library-starter uses [jest](https://jestjs.io/).
+We use [jest](https://jestjs.io/).
 
 Commands:
 
@@ -57,7 +53,7 @@ Commands:
 - `test:watch`: runs jest test runner in watch mode
 - `test:coverage`: runs jest test runner and generates coverage reports
 
-### Format & lint
+#### Format & lint
 
 This template relies on the combination of [eslint](https://github.com/eslint/eslint) — through [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) for linting and [prettier](https://github.com/prettier/prettier) for formatting.
 It also uses [cspell](https://github.com/streetsidesoftware/cspell) to ensure spelling
@@ -70,7 +66,7 @@ Commands:
 - `lint:check`: runs eslint without automatic fixing (used in CI)
 - `spell:check`: runs spellchecking
 
-### Releasing
+#### Releasing
 
 Under the hood, this library uses [semantic-release](https://github.com/semantic-release/semantic-release) and [commitizen](https://github.com/commitizen/cz-cli).
 The goal is to avoid manual release process. Using `semantic-release` will automatically create a github release (hence tags) as well as an npm release.
